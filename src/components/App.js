@@ -3,7 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Main from './Main';
 import PopupWithForm from './PopupWithForm';
-import PopupWithImage from './PopupWithImage';
+import ImagePopup from './ImagePopup';
 
 function App() {
   const[isEditProfilePopupOpen,setIsEditProfilePopupOpen]=React.useState(false);
@@ -47,7 +47,7 @@ function App() {
       <p class="popup__input-error popup__input-error_type_link"></p>
     </>}/>
     <PopupWithForm name="confirm" title="Вы уверены?" />
-    <PopupWithImage card={selectedCard} onClose={closeAllPopups}/>
+    <ImagePopup card={selectedCard} onClose={closeAllPopups}/>
   <Footer />
 </body>
 

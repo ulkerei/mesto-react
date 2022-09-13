@@ -1,7 +1,7 @@
 import React from "react";
 import imageClose from '../images/Close-icon.svg';
 
-function PopupWithImage (props) {
+function ImagePopup (props) {
 
   return (
   <section className={`popup popup_type_viewer ${props.card && 'popup_opened'}`}>
@@ -15,4 +15,4 @@ function PopupWithImage (props) {
   );
 };
 
-export default PopupWithImage;
+export default ImagePopup;
