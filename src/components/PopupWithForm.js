@@ -10,7 +10,7 @@ function PopupWithForm (props) {
         <h2 className="popup__heading">{props.title}</h2>
         <>{props.children}</>      
         <button type="submit" id={`${props.name}-submit`} className="popup__button popup__button_disabled">Сохранить</button>
-        <button type="button" id={`${props.name}-close`} onClick={props.onClose} className="popup__close"><img src={imageClose} class="popup__close-x" alt="Х" /></button>
+        <button type="button" id={`${props.name}-close`} onClick={props.onClose} className="popup__close"><img src={imageClose} className="popup__close-x" alt="Х" /></button>
       </form>
     </section>
   );
