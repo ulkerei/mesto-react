@@ -10,11 +10,13 @@ function EditAvatarPopup (props) {
     e.preventDefault();
 
     props.onUpdateAvatar({
-      name: currentUser.name,
-      about: currentUser.about,
-      avatar: avatarRef.current.value,
+      avatar: avatarRef.current.value
     });
   } 
+
+  React.useEffect(() => {
+    avatarRef.current.value ='';
+  }, [props.isOpen]); 
 
   return (
     <PopupWithForm
@@ -23,6 +25,7 @@ function EditAvatarPopup (props) {
       buttonName="Сохранить"
       onClose={props.onClose}
       isOpen={props.isOpen}
+      isLoading={props.isLoading}
       onSubmit={handleSubmit}
       children={<>
         <input
@@ -32,6 +35,7 @@ function EditAvatarPopup (props) {
           name="avatar"
           className="popup__input popup__input_type_avatar"
           placeholder="Ссылка на изображение"
+          defaultValue={''}
           ref={avatarRef}
         />
         <p className="popup__input-error popup__input-error_type_avatar"></p>

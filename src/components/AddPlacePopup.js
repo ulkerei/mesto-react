@@ -21,6 +21,11 @@ function handleSubmit(e) {
   });
 } 
 
+React.useEffect(() => {
+  setPlace('');
+  setLink('');
+}, [props.isOpen]); 
+
   return (
   <PopupWithForm
     name="add"
@@ -28,6 +33,7 @@ function handleSubmit(e) {
     buttonName="Создать"
     onClose={props.onClose}
     isOpen={props.isOpen}
+    isLoading={props.isLoading}
     onSubmit={handleSubmit}
     children={<>
       <input
@@ -40,6 +46,7 @@ function handleSubmit(e) {
         className="popup__input popup__input_type_place"
         placeholder="Название"
         onChange={handlePlaceChange}
+        value={place}
       />
       <p className="popup__input-error popup__input-error_type_place"></p>
       <input
@@ -50,6 +57,7 @@ function handleSubmit(e) {
         className="popup__input popup__input_type_link"
         placeholder="Ссылка на картинку"
         onChange={handleLinkChange}
+        value={link}
       />
       <p className="popup__input-error popup__input-error_type_link"></p>
     </>}

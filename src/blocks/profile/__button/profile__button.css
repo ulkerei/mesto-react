@@ -7,6 +7,6 @@
 }
 
 .profile__button:hover {
-  border: 2px solid rgba(255, 255, 255, .6);
+  border: none;
   opacity: 60%;
 }

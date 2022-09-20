@@ -6,3 +6,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.profile__button:hover > .profile__edit-avatar-image {
+  border: 2px solid rgba(255, 255, 255, .6);
+}
