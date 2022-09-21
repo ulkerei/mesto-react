@@ -106,7 +106,7 @@ function App() {
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
-      <body className="body">
+      <div className="body">
         <Header />
         <Main
           onEditProfile={handleEditProfileClick}
@@ -124,7 +124,7 @@ function App() {
         <ConfirmationPopup card={selectedCard} onClose={closeAllPopups} isOpen={isConfirmationPopupOpen} onDelete={handleCardDelete}/>
         <ImagePopup card={selectedCard} onClose={closeAllPopups} isOpen={isImagePopupOpen} />
         <Footer />
-      </body>
+      </div>
     </CurrentUserContext.Provider>
   );
 }

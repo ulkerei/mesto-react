@@ -1,9 +1,7 @@
 import React from "react";
 import PopupWithForm from './PopupWithForm';
-import CurrentUserContext from '../contexts/CurrentUserContext';
 
 function EditAvatarPopup (props) {
-  const currentUser = React.useContext(CurrentUserContext);
   const avatarRef = React.useRef('');
 
   function handleSubmit(e) {
@@ -26,8 +24,7 @@ function EditAvatarPopup (props) {
       onClose={props.onClose}
       isOpen={props.isOpen}
       isLoading={props.isLoading}
-      onSubmit={handleSubmit}
-      children={<>
+      onSubmit={handleSubmit}>
         <input
           type="url"
           required
@@ -39,8 +36,7 @@ function EditAvatarPopup (props) {
           ref={avatarRef}
         />
         <p className="popup__input-error popup__input-error_type_avatar"></p>
-      </>}
-    />
+      </PopupWithForm>
   )
 }
 

@@ -34,8 +34,7 @@ React.useEffect(() => {
     onClose={props.onClose}
     isOpen={props.isOpen}
     isLoading={props.isLoading}
-    onSubmit={handleSubmit}
-    children={<>
+    onSubmit={handleSubmit}>
       <input
         type="text"
         minLength="2"
@@ -46,7 +45,7 @@ React.useEffect(() => {
         className="popup__input popup__input_type_place"
         placeholder="Название"
         onChange={handlePlaceChange}
-        value={place}
+        value={place || ''}
       />
       <p className="popup__input-error popup__input-error_type_place"></p>
       <input
@@ -57,11 +56,10 @@ React.useEffect(() => {
         className="popup__input popup__input_type_link"
         placeholder="Ссылка на картинку"
         onChange={handleLinkChange}
-        value={link}
+        value={link || ''}
       />
       <p className="popup__input-error popup__input-error_type_link"></p>
-    </>}
-  />
+      </PopupWithForm>
   )
 }
 

@@ -38,8 +38,7 @@ function EditProfilePopup (props) {
     onClose={props.onClose}
     isOpen={props.isOpen}
     isLoading={props.isLoading}
-    onSubmit={handleSubmit}
-    children={<>
+    onSubmit={handleSubmit}>
       <input
         type="text"
         minLength="2"
@@ -49,7 +48,7 @@ function EditProfilePopup (props) {
         name="name"
         className="popup__input popup__input_type_name"
         placeholder="Имя"
-        value={name}
+        value={name || ''}
         onChange={handleNameChange}
       />
       <p className="popup__input-error popup__input-error_type_name"></p>
@@ -62,12 +61,11 @@ function EditProfilePopup (props) {
         name="job"
         className="popup__input popup__input_type_job"
         placeholder="Занятие"
-        value={description}
+        value={description || ''}
         onChange={handleAboutChange}
       />
       <p className="popup__input-error popup__input-error_type_job"></p>
-    </>}
-  />
+  </PopupWithForm>
   )
 }
 
